@@ -6,7 +6,7 @@ import Solar from './Solar';
 
 const Main = styled.div`
   border: 1px black solid;
-  width: 1000px;
+  width: 800px;
   height: 100vh;
   margin: 0 auto;
 `
@@ -15,6 +15,7 @@ const Container = () => {
   return (    
     <Main>
         <Solar />
+        <p>verfvawefc edfwe</p>
     </Main>
   );
 }

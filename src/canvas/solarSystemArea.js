@@ -2,8 +2,8 @@ const solarSystemArea = (updateFunction) => {
     return {
         canvas : document.createElement("canvas"),
         start : function() {
-            this.canvas.width = 1000;
-            this.canvas.height = 600;
+            this.canvas.width = 800;
+            this.canvas.height = 800;
             this.context = this.canvas.getContext("2d");
             document.querySelector('.canvas').append(this.canvas)
             this.frameNo = 0;

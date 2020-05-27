@@ -9,10 +9,16 @@ import sunIcon from '../assets/planets/sun.png';
 import mercuryIcon from '../assets/planets/mercury.png';
 import venusIcon from '../assets/planets/venus.png';
 import earthIcon from '../assets/planets/earth.png';
+import marsIcon from '../assets/planets/mars.png';
+import jupiterIcon from '../assets/planets/jupiter.png';
+import saturnIcon from '../assets/planets/saturn.png';
+import uranusIcon from '../assets/planets/uranus.png';
+import neptunIcon from '../assets/planets/neptun.png';
 
 
 const CanvasContainer = styled.div`
   width: 100%;
+
   background-image: url(${spaceImg});
   background-size: cover;
   position: relative;
@@ -43,26 +49,47 @@ const Button = styled.button`
 
 const Solar = () => {
     
-    let planetIns;
-    let planetIns2;
-    let planetIns3;
+    let planetMercury;
+    let planetVenus;
+    let planetEarth;
+    let planetMars;
+    let planetJupiter;
+    let planetSaturn;
+    let planetUranus;
+    let planetNeptun;
     let solarArea = solarSystemArea(updateGameArea);
     
     useEffect(() => {
-        planetIns = new planet(0, 1.4, mercuryIcon, 420, 300, solarArea);
-        planetIns2 = new planet(0, 2.1, venusIcon, 380, 300, solarArea);
-        planetIns3 = new planet(1, 2.8, earthIcon, 340, 300, solarArea);
+        let factor = 1
+        planetMercury = new planet(4.15 * factor, 1.1, mercuryIcon, 337, 400, solarArea);
+        planetVenus = new planet(1.6 * factor, 1.8, venusIcon, 295, 400, solarArea);
+        planetEarth = new planet(1 * factor, 2.5, earthIcon, 256, 400, solarArea);
+        planetMars = new planet(0.53 * factor, 3.2, marsIcon, 215, 400, solarArea);
+        planetJupiter = new planet(0.084 * factor, 3.9, jupiterIcon, 176, 400, solarArea);
+        planetSaturn = new planet(0.033 * factor, 4.6, saturnIcon, 136, 400, solarArea);
+        planetUranus = new planet(0.011 * factor, 5.3, uranusIcon, 96, 400, solarArea);
+        planetNeptun = new planet(0.006 * factor, 6, neptunIcon, 56, 400, solarArea);
         solarArea.start();  
     }, []);
   
     function updateGameArea() {
         solarArea.clear();
-        planetIns.newPos();
-        planetIns.update();
-        planetIns2.newPos();
-        planetIns2.update();
-        planetIns3.newPos();
-        planetIns3.update();
+        planetMercury.newPos();
+        planetMercury.update();
+        planetVenus.newPos();
+        planetVenus.update();
+        planetEarth.newPos();
+        planetEarth.update();
+        planetMars.newPos();
+        planetMars.update();
+        planetJupiter.newPos();
+        planetJupiter.update();
+        planetSaturn.newPos();
+        planetSaturn.update();
+        planetUranus.newPos();
+        planetUranus.update();
+        planetNeptun.newPos();
+        planetNeptun.update();
     }
      
     return (
