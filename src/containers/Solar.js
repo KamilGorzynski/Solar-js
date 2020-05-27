@@ -10,8 +10,8 @@ const Solar = () => {
     let solarArea = solarSystemArea(updateGameArea);
     
     useEffect(() => {
-        planetIns = new planet(30, 30, "red", 100, 200, solarArea);
-        planetIns2 = new planet(30, 30, "blue", 200, 200, solarArea);
+        planetIns = new planet(2, "red", 100, 200, solarArea);
+        planetIns2 = new planet(0.2,"blue", 100, 200, solarArea);
         solarArea.start();  
     }, []);
   

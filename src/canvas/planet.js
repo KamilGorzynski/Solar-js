@@ -1,11 +1,11 @@
-function planet(width, height, color, x, y, canvasArea) {
+function planet(factor, color, x, y, canvasArea) {
 
     // this.type = type;
-    this.width = width;
-    this.height = height;
-    this.speed = 1;
+    this.width = 30;
+    this.height = 30;
+    this.speed = factor;
     this.angle = 0;
-    this.moveAngle = 1;
+    this.moveAngle = factor/2;
     this.x = x;
     this.y = y;    
     this.update = function() {
