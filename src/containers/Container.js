@@ -6,7 +6,7 @@ import Solar from './Solar';
 
 const Main = styled.div`
   border: 1px black solid;
-  width: 70%;
+  width: 1000px;
   height: 100vh;
   margin: 0 auto;
 `
