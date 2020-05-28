@@ -1,4 +1,4 @@
-function planet(speed, factor, src, x, y, canvasArea) {
+function planet(speed, angleFactor, src, x, y, canvasArea) {
 
     this.type = 'image';
     this.image = new Image();
@@ -7,7 +7,7 @@ function planet(speed, factor, src, x, y, canvasArea) {
     this.height = 30;
     this.speed = speed;
     this.angle = 0;
-    this.moveAngle = speed / factor;
+    this.moveAngle = speed / angleFactor;
     this.x = x;
     this.y = y;    
     this.update = function() {

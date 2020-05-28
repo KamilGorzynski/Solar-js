@@ -60,7 +60,7 @@ const Solar = () => {
     let solarArea = solarSystemArea(updateGameArea);
     
     useEffect(() => {
-        let factor = 1
+        let factor = 0;
         planetMercury = new planet(4.15 * factor, 1.1, mercuryIcon, 337, 400, solarArea);
         planetVenus = new planet(1.6 * factor, 1.8, venusIcon, 295, 400, solarArea);
         planetEarth = new planet(1 * factor, 2.5, earthIcon, 256, 400, solarArea);
@@ -91,6 +91,32 @@ const Solar = () => {
         planetNeptun.newPos();
         planetNeptun.update();
     }
+
+    const changeSpeedFactor = (event) => {
+        planetMercury.speed = 4.15 * event.target.value;
+        planetMercury.moveAngle = 4.15 / 1.1 * event.target.value;
+
+        planetVenus.speed = 1.6 * event.target.value;
+        planetVenus.moveAngle = 1.6 / 1.8 * event.target.value;
+
+        planetEarth.speed = 1 * event.target.value;
+        planetEarth.moveAngle = 1 / 2.5 * event.target.value;
+        
+        planetMars.speed = 0.53 * event.target.value;
+        planetMars.moveAngle = 0.53 / 3.2 * event.target.value;
+        
+        planetJupiter.speed = 0.084 * event.target.value;
+        planetJupiter.moveAngle = 0.084 / 3.9 * event.target.value;
+        
+        planetSaturn.speed = 0.033 * event.target.value;
+        planetSaturn.moveAngle = 0.033 / 4.6 * event.target.value;
+        
+        planetUranus.speed = 0.011 * event.target.value;
+        planetUranus.moveAngle = 0.011 / 5.3 * event.target.value;
+        
+        planetNeptun.speed = 0.006 * event.target.value;
+        planetNeptun.moveAngle = 0.006 / 6 * event.target.value;
+    }
      
     return (
         <CanvasContainer>
@@ -114,7 +140,9 @@ const Solar = () => {
                 </Axis>
                 
             </div> 
-        </CanvasContainer>     
+            <input style={{position:"absolute"}} type="range"   min="0" max="3" onChange={changeSpeedFactor} />
+        </CanvasContainer>
+             
     )  
 }
 
