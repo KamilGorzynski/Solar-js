@@ -36,6 +36,7 @@
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .checkmark {
   background-color: #400080;
+  opacity: 0.7;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */

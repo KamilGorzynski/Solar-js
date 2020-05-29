@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import React from 'react';
 import './RadioContainer.css';
 
 
@@ -14,7 +13,6 @@ const PanelContent = styled.div`
     margin: 0.5rem auto 0 auto;
    
 `
-
 
 const RadioContainer = ({fun}) => {
   return (
