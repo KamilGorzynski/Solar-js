@@ -2,7 +2,7 @@ import React from 'react';
 import Container from './containers/Container'
 const App = () => {
   return (
-    <div >
+    <div>
       <Container />
     </div>
   );

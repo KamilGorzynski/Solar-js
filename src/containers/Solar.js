@@ -1,10 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import solarSystemArea from '../canvas/solarSystemArea';
 import planet from '../canvas/planet';
+import ControlPanel from './ControlPanel';
+
+// images
 import spaceImg from '../assets/space.jpg';
+import spaceImg2 from '../assets/space2.jpg';
 import sunIcon from '../assets/planets/sun.png';
 import mercuryIcon from '../assets/planets/mercury.png';
 import venusIcon from '../assets/planets/venus.png';
@@ -18,7 +22,6 @@ import neptunIcon from '../assets/planets/neptun.png';
 
 const CanvasContainer = styled.div`
   width: 100%;
-
   background-image: url(${spaceImg});
   background-size: cover;
   position: relative;
@@ -43,9 +46,6 @@ const Axis = styled.div`
   border: 1px dashed white;
   z-index: -1;
 `
-const Button = styled.button`
-  color: ;
-`
 
 const Solar = () => {
     
@@ -58,9 +58,11 @@ const Solar = () => {
     let planetUranus;
     let planetNeptun;
     let solarArea = solarSystemArea(updateGameArea);
+
+    const canvasContainer = useRef(null);
     
     useEffect(() => {
-        let factor = 0;
+        let factor = 1;
         planetMercury = new planet(4.15 * factor, 1.1, mercuryIcon, 337, 400, solarArea);
         planetVenus = new planet(1.6 * factor, 1.8, venusIcon, 295, 400, solarArea);
         planetEarth = new planet(1 * factor, 2.5, earthIcon, 256, 400, solarArea);
@@ -93,6 +95,7 @@ const Solar = () => {
     }
 
     const changeSpeedFactor = (event) => {
+        event.defaultValue = event.target.value;
         planetMercury.speed = 4.15 * event.target.value;
         planetMercury.moveAngle = 4.15 / 1.1 * event.target.value;
 
@@ -117,19 +120,29 @@ const Solar = () => {
         planetNeptun.speed = 0.006 * event.target.value;
         planetNeptun.moveAngle = 0.006 / 6 * event.target.value;
     }
+
+    const changeBackground = (event) => {
+        if (event.target.value === 'classic') {
+            canvasContainer.current.style.backgroundImage = `url(${spaceImg})`;
+        } else {
+            canvasContainer.current.style.backgroundImage = `url(${spaceImg2})`; 
+        }
+    }
      
     return (
-        <CanvasContainer>
-            <div className="canvas">
-                <Axis size={43}>
-                    <Axis size={38}>
-                        <Axis size={33}>
-                            <Axis size={28}>
-                                <Axis size={23}>
-                                    <Axis size={18}>
-                                        <Axis size={13}>
-                                            <Axis size={8}>
-                                                <SunIcon src={ sunIcon }></SunIcon>
+        <div>
+            <CanvasContainer ref={ canvasContainer }>
+                <div className="canvas">
+                    <Axis size={43}>
+                        <Axis size={38}>
+                            <Axis size={33}>
+                                <Axis size={28}>
+                                    <Axis size={23}>
+                                        <Axis size={18}>
+                                            <Axis size={13}>
+                                                <Axis size={8}>
+                                                    <SunIcon src={ sunIcon }></SunIcon>
+                                                </Axis>
                                             </Axis>
                                         </Axis>
                                     </Axis>
@@ -137,11 +150,16 @@ const Solar = () => {
                             </Axis>
                         </Axis>
                     </Axis>
-                </Axis>
+                    
+                </div> 
                 
-            </div> 
-            <input style={{position:"absolute"}} type="range"   min="0" max="3" onChange={changeSpeedFactor} />
-        </CanvasContainer>
+            </CanvasContainer>
+            <ControlPanel
+                    changeSpeedFactor={changeSpeedFactor}
+                    fun={changeBackground}
+                />
+        </div>
+        
              
     )  
 }
