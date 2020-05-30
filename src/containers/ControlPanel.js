@@ -5,16 +5,19 @@ import Radio from './RadioContainer';
 
 const Panel = styled.div`
   width 100%;
-  background-color: rgba(134, 124, 153, 0.904);
   height: 5rem;
   color: #d3d3d3;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  margin: 2rem auto;
 `
 const PanelDiv = styled.div`
   width 48%;
   text-align: center;
   padding-top: 0.5rem;
+  background-color: rgba(59, 59, 59, 0.904);
+  border-radius: 1rem;
+  border: 2px rgba(46, 46, 46, 0.5) solid;
 `
 
 

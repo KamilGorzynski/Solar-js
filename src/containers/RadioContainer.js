@@ -11,7 +11,6 @@ const PanelContent = styled.div`
     font-size: 22px;
     justify-content: space-between;
     margin: 0.5rem auto 0 auto;
-   
 `
 
 const RadioContainer = ({fun}) => {

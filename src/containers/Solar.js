@@ -21,11 +21,14 @@ import neptunIcon from '../assets/planets/neptun.png';
 
 
 const CanvasContainer = styled.div`
-  width: 100%;
+  width: 800px;
   background-image: url(${spaceImg});
   background-size: cover;
   position: relative;
   z-index: 2;
+  margin: 0rem auto;
+  border-radius: 1.5rem;
+  border: 1px rgba(46, 46, 46, 0.904) solid;
 `
 
 const SunIcon = styled.img`

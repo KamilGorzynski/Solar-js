@@ -6,10 +6,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(81, 66, 97, 0.904);
-  /* background-color: rgba(134, 124, 153, 0.904); */
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* .jas{
+  padding: 2rem;
+  background-color: rgba(134, 124, 153, 0.904);
+  justify-content: center;
+  background-image: linear-gradient(to bottom, rgba(131, 131, 131, 0.904), rgba(59, 59, 59, 0.904));
+} */
