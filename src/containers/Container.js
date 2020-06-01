@@ -1,7 +1,9 @@
 /** @jsx jsx */
+import {createContext, useReducer} from 'react';
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import Solar from './Solar';
+import Table from './Table';
 
 const Main = styled.div`
   width: 868px;
@@ -11,11 +13,39 @@ const Main = styled.div`
   padding: 2rem;
 `
 
+// stan poczatkowy
+const initialState = {
+  currentPlanet: "2",
+};
+
+// definiujemy dostepne typy akcji
+export const ACTIONS = {
+  SET_CURRENT_PLANET: 'SET_CURRENT_PLANET',
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case ACTIONS.SET_CURRENT_PLANET:
+      return {...state, currentPlanet: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const ReduxStoreContext = createContext();
+
 const Container = () => {
-  return (    
-    <Main>
-        <Solar />
-    </Main>
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return ( 
+    <ReduxStoreContext.Provider value={{ state, dispatch }}>
+      <Main>
+          <Solar />
+          <Table />
+      </Main>
+    </ReduxStoreContext.Provider>   
+    
   );
 }
 

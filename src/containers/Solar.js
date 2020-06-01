@@ -1,11 +1,17 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import {useEffect, useRef} from 'react';
+import {
+    useEffect,
+    useRef,
+    useContext,
+    useMemo
+} from 'react';
 import solarSystemArea from '../canvas/solarSystemArea';
 import planet from '../canvas/planet';
 import ControlPanel from './ControlPanel';
 import PlanetChoice from './PlanetChoice';
+import {ACTIONS, ReduxStoreContext} from './Container'
 
 // images
 import spaceImg from '../assets/space.jpg';
@@ -52,6 +58,7 @@ const Axis = styled.div`
 `
 
 const Solar = () => {
+    const { state, dispatch } = useContext(ReduxStoreContext);
 
     let solarArea = solarSystemArea(updateGameArea);
 
@@ -99,8 +106,12 @@ const Solar = () => {
             canvasContainer.current.style.backgroundImage = `url(${spaceImg2})`; 
         }
     }
-
-    const hoverPlanet = (event) => {
+    
+    const selectPlanet = (event) => {    
+        dispatch({
+            type: ACTIONS.SET_CURRENT_PLANET,
+            payload: event.target.value 
+        });
         for (let i=0; i < planetList.length; i++) {
            if (i == event.target.value){
             planetList[i].width = 45;
@@ -109,41 +120,46 @@ const Solar = () => {
             planetList[i].width = 30;
             planetList[i].height = 30; 
            }
-        }   
+        }            
     }
 
-     
-    return (
-        <div>
-            <CanvasContainer ref={ canvasContainer }>
-                <div className="canvas">
-                    <Axis size={43}>
-                        <Axis size={38}>
-                            <Axis size={33}>
-                                <Axis size={28}>
-                                    <Axis size={23}>
-                                        <Axis size={18}>
-                                            <Axis size={13}>
-                                                <Axis size={8}>
-                                                    <SunIcon src={ sunIcon }></SunIcon>
+    return useMemo(() => {
+        return (
+            <div>
+                <CanvasContainer ref={ canvasContainer }>
+                    <div className="canvas">
+                        <Axis size={43}>
+                            <Axis size={38}>
+                                <Axis size={33}>
+                                    <Axis size={28}>
+                                        <Axis size={23}>
+                                            <Axis size={18}>
+                                                <Axis size={13}>
+                                                    <Axis size={8}>
+                                                        <SunIcon src={ sunIcon }></SunIcon>
+                                                    </Axis>
                                                 </Axis>
                                             </Axis>
                                         </Axis>
                                     </Axis>
                                 </Axis>
                             </Axis>
-                        </Axis>
-                    </Axis>                    
-                </div>             
-            </CanvasContainer>
+                        </Axis>                    
+                    </div>             
+                </CanvasContainer>
+    
+                <ControlPanel
+                    changeSpeedFactor={changeSpeedFactor}
+                    fun={changeBackground}
+                />
+                
+                <PlanetChoice onChange={ selectPlanet } />
+            </div> 
+        )  
+    }, [])
+    }
 
-            <ControlPanel
-                changeSpeedFactor={changeSpeedFactor}
-                fun={changeBackground}
-            />
-            <PlanetChoice onChange={hoverPlanet} />
-        </div> 
-    )  
-}
+     
+    
 
 export default Solar;
