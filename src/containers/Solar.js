@@ -5,6 +5,7 @@ import {useEffect, useRef} from 'react';
 import solarSystemArea from '../canvas/solarSystemArea';
 import planet from '../canvas/planet';
 import ControlPanel from './ControlPanel';
+import PlanetChoice from './PlanetChoice';
 
 // images
 import spaceImg from '../assets/space.jpg';
@@ -98,6 +99,19 @@ const Solar = () => {
             canvasContainer.current.style.backgroundImage = `url(${spaceImg2})`; 
         }
     }
+
+    const hoverPlanet = (event) => {
+        for (let i=0; i < planetList.length; i++) {
+           if (i == event.target.value){
+            planetList[i].width = 45;
+            planetList[i].height = 45;
+           } else {
+            planetList[i].width = 30;
+            planetList[i].height = 30; 
+           }
+        }   
+    }
+
      
     return (
         <div>
@@ -127,6 +141,7 @@ const Solar = () => {
                 changeSpeedFactor={changeSpeedFactor}
                 fun={changeBackground}
             />
+            <PlanetChoice onChange={hoverPlanet} />
         </div> 
     )  
 }

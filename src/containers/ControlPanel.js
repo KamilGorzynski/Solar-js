@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import Radio from './RadioContainer';
+import RadioContainer from './RadioContainer';
 
 const Panel = styled.div`
   width 100%;
@@ -68,7 +68,7 @@ const ControlPanel = ({ changeSpeedFactor, fun }) => {
         </PanelDiv>
         <PanelDiv>
             <RangeTitle>Background:</RangeTitle>
-            <Radio fun={fun}/>
+            <RadioContainer fun={fun}/>
         </PanelDiv>
     </Panel>    
       
