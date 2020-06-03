@@ -3,7 +3,7 @@ import {createContext, useReducer} from 'react';
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import Solar from './Solar';
-import Table from './Table';
+import PlanetData from './PlanetData';
 import Header from './Header';
 
 const Main = styled.div`
@@ -46,7 +46,7 @@ const Container = () => {
       <Header />
       <Main>
           <Solar />
-          <Table />
+          <PlanetData />
       </Main>
     </ReduxStoreContext.Provider>   
     

@@ -35,7 +35,7 @@ const CanvasContainer = styled.div`
   z-index: 2;
   margin: 0rem auto;
   border-radius: 1.5rem;
-  border: 1px rgba(46, 46, 46, 0.904) solid;
+  border: 2px rgba(46, 46, 46, 0.904) solid;
 `
 
 const SunIcon = styled.img`
@@ -58,7 +58,7 @@ const Axis = styled.div`
 `
 
 const Solar = () => {
-    const { state, dispatch } = useContext(ReduxStoreContext);
+    const { dispatch } = useContext(ReduxStoreContext);
 
     let solarArea = solarSystemArea(updateGameArea);
 
@@ -152,7 +152,7 @@ const Solar = () => {
                     changeSpeedFactor={changeSpeedFactor}
                     fun={changeBackground}
                 />
-                
+
                 <PlanetChoice onChange={ selectPlanet } />
             </div> 
         )  
