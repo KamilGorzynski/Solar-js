@@ -7,16 +7,16 @@ const RadioContainer = styled.div`
     width 100%;
     display: flex;
     flex-wrap: wrap;
-    height: 8rem;
     text-align: center;
     font-size: 22px;
     justify-content: space-between;
     margin: 0.5rem auto 0 auto;
     padding: 0.5rem;
-    background-color: rgba(59, 59, 59, 0.904);
+    background-color: rgba(20, 20, 20, 0.904);
+    // background-image: linear-gradient(to bottom, rgba(35, 35, 35, 0.904), rgba(61, 61, 61, 0.904));
     border-radius: 1rem;
     border: 2px rgba(46, 46, 46, 0.5) solid;
-    color: white;
+    color: #d3d3d3;
 `
 const PanelContent = styled.div`
     width 41%;

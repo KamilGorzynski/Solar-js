@@ -15,9 +15,11 @@ const PanelDiv = styled.div`
   width 48%;
   text-align: center;
   padding-top: 0.5rem;
-  background-color: rgba(59, 59, 59, 0.904);
+  // background-image: linear-gradient(to bottom, rgba(35, 35, 35, 0.904), rgba(61, 61, 61, 0.904));
+  background-color: rgba(20, 20, 20, 0.904);
   border-radius: 1rem;
   border: 2px rgba(46, 46, 46, 0.5) solid;
+  
 `
 
 
