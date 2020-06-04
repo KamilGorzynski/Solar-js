@@ -38,7 +38,7 @@ const Table = () => {
 
   const { state } = useContext(ReduxStoreContext);
   return (
-    <div>                                    
+    <div>                                
          <Tab>
             <tbody>
                <Row>
