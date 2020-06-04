@@ -19,10 +19,17 @@ code {
   box-sizing: border-box;
 }
 
-.jas{
-  padding: 2rem;
-  background-color: rgb(103, 29, 126);
-  justify-content: center;
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.904), rgba(20, 20, 20, 0.904));
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: white;
+  transition: 0.4s ease-in-out;
 }
+a:hover {
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
 

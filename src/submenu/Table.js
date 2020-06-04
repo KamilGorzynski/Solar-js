@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import {ACTIONS, ReduxStoreContext} from './Container';
+import {ACTIONS, ReduxStoreContext} from '../containers/Container';
 import {
     useContext
 } from 'react';
@@ -9,7 +9,7 @@ import {
 const Tab = styled.table`
    width 100%;
    text-align: left;
-   margin: 2rem auto;
+   margin: 0 auto 2rem auto;
    font-size: 22px;
    background-color: rgba(20, 20, 20, 0.904);
    border: 2px rgba(46, 46, 46, 0.5) solid;
@@ -36,7 +36,7 @@ const Td = styled.td`
 
 const Table = () => {
 
-  const { state, dispatch } = useContext(ReduxStoreContext);
+  const { state } = useContext(ReduxStoreContext);
   return (
     <div>                                    
          <Tab>
