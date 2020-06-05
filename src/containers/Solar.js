@@ -91,11 +91,12 @@ const Solar = () => {
     }
 
     const changeSpeedFactor = (event) => {
-        planetList.map((item, index) => {
+        
+        planetList.map((item, index) => {            
             const planetIndex = planetDataList[index];
-            const val = event.target.value;
-            item.speed = planetIndex[0] * val;
-            item.moveAngle = planetIndex[0] / planetIndex[1] * val;
+            const val = Number(event.target.value);  
+            item.speed = planetIndex[1] * val;
+            item.moveAngle = planetIndex[1] / planetIndex[2] * val;
          });
     }
 
