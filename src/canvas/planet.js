@@ -1,5 +1,6 @@
-function planet(speed, angleFactor, src, x, y, canvasArea) {
+function planet(name, speed, angleFactor, src, x, y, canvasArea) {
 
+    this.name = name;
     this.type = 'image';
     this.image = new Image();
     this.image.src = src;

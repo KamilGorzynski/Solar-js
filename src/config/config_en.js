@@ -4,7 +4,7 @@ const config = {
         'venus': 'Venus',
         'earth': 'Earth',
         'mars': 'Mars',
-        'jupieter': 'Jupieter',
+        'jupieter': 'Jupiter',
         'saturn': 'Saturn',
         'uranus': 'Uranus',
         'neptune': 'Neptune',

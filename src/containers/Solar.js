@@ -68,14 +68,14 @@ const Solar = () => {
     let factor = 1;
     
     const planetDataList = [
-        [4.15 * factor, 1.1, mercuryIcon, 337, 400, solarArea],
-        [1.6 * factor, 1.8, venusIcon, 295, 400, solarArea],
-        [1 * factor, 2.5, earthIcon, 256, 400, solarArea],
-        [0.53 * factor, 3.2, marsIcon, 215, 400, solarArea],
-        [0.084 * factor, 3.9, jupiterIcon, 176, 400, solarArea],
-        [0.033 * factor, 4.6, saturnIcon, 136, 400, solarArea],
-        [0.011 * factor, 5.3, uranusIcon, 96, 400, solarArea],
-        [0.006 * factor, 6, neptunIcon, 56, 400, solarArea],
+        ["mercury", 4.15 * factor, 1.1, mercuryIcon, 337, 400, solarArea],
+        ["venus", 1.6 * factor, 1.8, venusIcon, 295, 400, solarArea],
+        ["earth", 1 * factor, 2.5, earthIcon, 256, 400, solarArea],
+        ["mars", 0.53 * factor, 3.2, marsIcon, 215, 400, solarArea],
+        ["jupiter", 0.084 * factor, 3.9, jupiterIcon, 176, 400, solarArea],
+        ["saturn", 0.033 * factor, 4.6, saturnIcon, 136, 400, solarArea],
+        ["uranus", 0.011 * factor, 5.3, uranusIcon, 96, 400, solarArea],
+        ["neptune", 0.006 * factor, 6, neptunIcon, 56, 400, solarArea],
     ];
     useEffect(() => {       
         planetDataList.map( item => planetList.push(new planet(...item)) )
@@ -113,7 +113,7 @@ const Solar = () => {
             payload: event.target.value 
         });
         for (let i=0; i < planetList.length; i++) {
-           if (i == event.target.value){
+           if (planetList[i].name === event.target.value){
             planetList[i].width = 45;
             planetList[i].height = 45;
            } else {

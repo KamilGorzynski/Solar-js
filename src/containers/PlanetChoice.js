@@ -72,7 +72,7 @@ const PlanetChoice = ({ onChange }) => {
                 <Radio
                     name="planet"
                     label={ planet.jupieter }
-                    value="jupieter"
+                    value="jupiter"
                     onChange={ onChange } 
                 />
                 <Radio
