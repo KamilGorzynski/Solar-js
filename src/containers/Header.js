@@ -44,7 +44,7 @@ const Header = () => {
 
   const { dispatch } = useContext(ReduxStoreContext);
 
-  const setLangVersion = (event) => { 
+  const setLangVersion = (event) => {
     dispatch({
         type: ACTIONS.SET_LANG_VERSION,
         payload: event.target.innerText 

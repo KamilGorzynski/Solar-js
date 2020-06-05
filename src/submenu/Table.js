@@ -36,30 +36,24 @@ const Td = styled.td`
 const Table = () => {
 
   const { state } = useContext(ReduxStoreContext);
+  const data = state.currentPlanetData.data;
   return (
     <div>                                
          <Tab>
             <tbody>
                <Row>
-                  <Td style={{fontWeight: 'bold'}}>Title:</Td>
+                  <Td style={ {fontWeight: 'bold'} }>Title:</Td>
                   <Td>{ state.langVersion }</Td>
                </Row>
                <Row>
-                  <Td style={{fontWeight: 'bold'}}>Title:</Td>
+                  <Td style={ {fontWeight: 'bold'} }>Title:</Td>
                   <Td>{ state.currentPlanet }</Td>
                </Row>
                <Row>
-                  <Td style={{fontWeight: 'bold'}}>Title:</Td>
-                  <Td>{ state.currentPlanet }</Td>
+                  <Td style={ {fontWeight: 'bold'} }>Title:</Td>
+                  <Td>{ data ? data.density : '' }</Td>
                </Row>
-               <Row>
-                  <Td style={{fontWeight: 'bold'}}>Title:</Td>
-                  <Td>{ state.currentPlanet }</Td>
-               </Row>
-               <Row>
-                  <Td style={{fontWeight: 'bold'}}>Title:</Td>
-                  <Td>{ state.currentPlanet }</Td>
-               </Row>
+               
                     
             </tbody>        
          </Tab> 

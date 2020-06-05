@@ -54,20 +54,20 @@ const PlanetBanner = () => {
   const { submenu } = state.langVersion == 'EN' ? config_en : config_pl;
 
   const setPlanetIcon = () => {
-    switch (Number(state.currentPlanet)) {
-      case 0:
+    switch (state.currentPlanet) {
+      case 'mercury':
         return mercuryIcon;
-      case 1:
+      case 'venus':
         return venusIcon;
-      case 3:
+      case 'mars':
         return marsIcon;
-      case 4:
+      case 'jupieter':
         return jupiterIcon;
-      case 5:
+      case 'saturn':
         return saturnIcon;
-      case 6:
+      case 'uranus':
         return uranusIcon;
-      case 7:
+      case 'neptune':
         return neptunIcon;
   
       default:

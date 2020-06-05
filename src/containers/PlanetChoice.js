@@ -36,20 +36,19 @@ const PlanetChoice = ({ onChange }) => {
     const { state } = useContext(ReduxStoreContext);
     const { planet } = state.langVersion == 'EN' ? config_en : config_pl;
 
-    return (    
-                                
+    return (                      
          <RadioContainer>
             <PanelContent>
                 <Radio
                     name="planet"
                     label={ planet.mercury }
-                    value="0"
+                    value="mercury"
                     onChange={ onChange }
                 />
                 <Radio
                     name="planet"
                     label={ planet.venus }
-                    value="1"
+                    value="venus"
                     onChange={ onChange }
                     
                 />
@@ -58,14 +57,14 @@ const PlanetChoice = ({ onChange }) => {
                 <Radio
                     name="planet"
                     label={ planet.earth }
-                    value="2"
+                    value="earth"
                     onChange={ onChange }
                     defaultChecked
                 />
                 <Radio
                     name="planet"
                     label={ planet.mars }
-                    value="3"
+                    value="mars"
                     onChange={ onChange } 
                 />
             </PanelContent>
@@ -73,13 +72,13 @@ const PlanetChoice = ({ onChange }) => {
                 <Radio
                     name="planet"
                     label={ planet.jupieter }
-                    value="4"
+                    value="jupieter"
                     onChange={ onChange } 
                 />
                 <Radio
                     name="planet"
                     label={ planet.saturn }
-                    value="5"
+                    value="saturn"
                     onChange={ onChange } 
                 />
             </PanelContent>
@@ -87,13 +86,13 @@ const PlanetChoice = ({ onChange }) => {
                 <Radio
                     name="planet"
                     label={ planet.uranus }
-                    value="6"
+                    value="uranus"
                     onChange={ onChange } 
                 />
                 <Radio
                     name="planet"
                     label={ planet.neptune }
-                    value="7"
+                    value="neptune"
                     onChange={ onChange } 
                 />
             </PanelContent>
