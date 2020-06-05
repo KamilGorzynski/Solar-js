@@ -2,9 +2,7 @@
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import {ACTIONS, ReduxStoreContext} from '../containers/Container';
-import {
-    useContext
-} from 'react';
+import { useContext } from 'react';
 
 const Tab = styled.table`
    width 100%;
@@ -16,6 +14,7 @@ const Tab = styled.table`
    border-collapse: collapse;
    color: #d3d3d3;
    padding: 1rem 2rem;
+   border-radius: 0 0 1rem 1rem;
 `
 
 const Row = styled.tr`
@@ -43,7 +42,7 @@ const Table = () => {
             <tbody>
                <Row>
                   <Td style={{fontWeight: 'bold'}}>Title:</Td>
-                  <Td>{ state.currentPlanet }</Td>
+                  <Td>{ state.langVersion }</Td>
                </Row>
                <Row>
                   <Td style={{fontWeight: 'bold'}}>Title:</Td>

@@ -1,9 +1,20 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import gif from '../assets/giphy.gif';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { ReduxStoreContext} from '../containers/Container';
+import config_pl from '../config/config_pl';
+import config_en from '../config/config_en';
 
+import mercuryIcon from '../assets/planets/mercury.png';
+import venusIcon from '../assets/planets/venus.png';
+import earthIcon from '../assets/planets/earth.png';
+import marsIcon from '../assets/planets/mars.png';
+import jupiterIcon from '../assets/planets/jupiter.png';
+import saturnIcon from '../assets/planets/saturn.png';
+import uranusIcon from '../assets/planets/uranus.png';
+import neptunIcon from '../assets/planets/neptun.png';
 
 const PlanetBannerDiv = styled.div`
   width: 100%;
@@ -16,8 +27,8 @@ const PlanetBannerDiv = styled.div`
   text-align: center;
 `
 const PlanetGif = styled.img`
-  width: 12rem;
-  margin-top: 1rem;
+  width: 10rem;
+  margin-top: 2rem;
 `
 
 const Ul = styled.ul`
@@ -25,7 +36,7 @@ const Ul = styled.ul`
   list-style: none;
   width: 100%;
   justify-content: space-between;
-  padding: 1rem 6rem 1rem 6rem;
+  padding: 1rem 6rem;
   
 `
 
@@ -39,14 +50,38 @@ const Li = styled.li`
 
 const PlanetBanner = () => {
 
+  const { state } = useContext(ReduxStoreContext);
+  const { submenu } = state.langVersion == 'EN' ? config_en : config_pl;
+
+  const setPlanetIcon = () => {
+    switch (Number(state.currentPlanet)) {
+      case 0:
+        return mercuryIcon;
+      case 1:
+        return venusIcon;
+      case 3:
+        return marsIcon;
+      case 4:
+        return jupiterIcon;
+      case 5:
+        return saturnIcon;
+      case 6:
+        return uranusIcon;
+      case 7:
+        return neptunIcon;
+  
+      default:
+        return earthIcon;
+    }
+  };
 
     return (
        <PlanetBannerDiv>
-           <PlanetGif src={gif} />
+           <PlanetGif src={ setPlanetIcon() } />
            <Ul>
-              <Li><NavLink exact activeClassName="active" to="/" >Planet data</NavLink></Li>
-              <Li><NavLink activeClassName="active" to="/description" >Description</NavLink></Li>
-              <Li><NavLink activeClassName="active" to="/sources" >Sources</NavLink></Li>
+              <Li><NavLink exact activeClassName="active" to="/" >{ submenu.planet_data }</NavLink></Li>
+              <Li><NavLink activeClassName="active" to="/description" >{ submenu.description }</NavLink></Li>
+              <Li><NavLink activeClassName="active" to="/sources" >{ submenu.sources }</NavLink></Li>
            </Ul>
             
 

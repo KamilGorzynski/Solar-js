@@ -18,17 +18,21 @@ const Main = styled.div`
 // stan poczatkowy
 const initialState = {
   currentPlanet: "2",
+  langVersion: "PL",
 };
 
 // definiujemy dostepne typy akcji
 export const ACTIONS = {
   SET_CURRENT_PLANET: 'SET_CURRENT_PLANET',
+  SET_LANG_VERSION: 'SET_LANG_VERSION',
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.SET_CURRENT_PLANET:
       return {...state, currentPlanet: action.payload };
+    case ACTIONS.SET_LANG_VERSION:
+      return {...state, langVersion: action.payload };
 
     default:
       return state;

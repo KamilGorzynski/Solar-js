@@ -18,14 +18,14 @@ const RadioContainer = ({fun}) => {
         <PanelContent>
             <Radio
                 name="background"
-                label="Classic"
+                label="classic"
                 value="classic"
                 onChange={fun}
                 defaultChecked
             />
             <Radio
                 name="background" 
-                label="Milky way"
+                label="milky way"
                 value="milkyWay"
                 onChange={fun}
             />

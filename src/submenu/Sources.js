@@ -10,9 +10,9 @@ const Container = styled.div`
    font-size: 22px;
    background-color: rgba(20, 20, 20, 0.904);
    border: 2px rgba(46, 46, 46, 0.5) solid;
-   border-collapse: collapse;
    color: #d3d3d3;
    padding: 1rem 2rem;
+   border-radius: 0 0 1rem 1rem;
 `
 
 const Sources = () => {

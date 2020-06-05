@@ -2,6 +2,10 @@
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import RadioContainer from './RadioContainer';
+import { useContext} from 'react';
+import {ReduxStoreContext} from './Container';
+import config_pl from '../config/config_pl';
+import config_en from '../config/config_en';
 
 const Panel = styled.div`
   width 100%;
@@ -62,14 +66,18 @@ const Range = styled.input`
 
 
 const ControlPanel = ({ changeSpeedFactor, fun }) => {
+
+  const { state } = useContext(ReduxStoreContext);
+  const { rotate_speed, background } = state.langVersion == 'EN' ? config_en : config_pl;
+
   return (
     <Panel>
         <PanelDiv>
-            <RangeTitle>Rotate speed:</RangeTitle>
+            <RangeTitle>{ rotate_speed }: </RangeTitle>
             <Range defaultValue="1" type="range" min="0" max="3" onChange={changeSpeedFactor} />
         </PanelDiv>
         <PanelDiv>
-            <RangeTitle>Background:</RangeTitle>
+            <RangeTitle>{ background }:</RangeTitle>
             <RadioContainer fun={fun}/>
         </PanelDiv>
     </Panel>    
