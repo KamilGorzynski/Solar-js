@@ -61,7 +61,7 @@ const PlanetBanner = () => {
         return venusIcon;
       case 'mars':
         return marsIcon;
-      case 'jupieter':
+      case 'jupiter':
         return jupiterIcon;
       case 'saturn':
         return saturnIcon;

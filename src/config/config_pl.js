@@ -1,10 +1,10 @@
 const config = {
-    planet: {
+    'planet': {
         'mercury': 'Merkury',
         'venus': 'Wenus',
         'earth': 'Ziemia',
         'mars': 'Mars',
-        'jupieter': 'Jowisz',
+        'jupiter': 'Jowisz',
         'saturn': 'Saturn',
         'uranus': 'Uran',
         'neptune': 'Neptun',
@@ -16,6 +16,20 @@ const config = {
     },
     'rotate_speed': 'Prędkość obrotu',
     'background': 'Motyw',
+    'planet_data': {
+        'name': 'Nazwa',
+        'semimajor_axis': 'Półoś wielka',
+        'perihelion': 'Perycentrum',
+        'aphelion': 'Apocentrum',
+        'eccentricity': 'Mimośród',
+        'inclination': 'Nachylenie orbity',
+        'density': 'Gęstość',
+        'gravity': 'Przyspieszenie grawitacyjne',
+        'escape': 'Prędkość ucieczki',
+        'mean_radius': 'Promień',
+        'equa_radius': 'Promień równikowy',
+        'polar_radius': 'Promień biegunowy',
+    }
 }
 
 export default config

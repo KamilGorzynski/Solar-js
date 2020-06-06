@@ -8,7 +8,7 @@ import config_pl from '../config/config_pl';
 import config_en from '../config/config_en';
 
 const RadioContainer = styled.div`
-    width 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -22,7 +22,7 @@ const RadioContainer = styled.div`
     color: #d3d3d3;
 `
 const PanelContent = styled.div`
-    width 41%;
+    width: 41%;
     display: flex;
     text-align: center;
     font-size: 22px;
@@ -71,7 +71,7 @@ const PlanetChoice = ({ onChange }) => {
             <PanelContent>
                 <Radio
                     name="planet"
-                    label={ planet.jupieter }
+                    label={ planet.jupiter }
                     value="jupiter"
                     onChange={ onChange } 
                 />
