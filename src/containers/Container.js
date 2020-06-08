@@ -12,7 +12,7 @@ const Main = styled.div`
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.904);
   border: 2px rgba(46, 46, 46, 0.5) solid;
-  border-radius: 2rem 2rem 0 0;
+  /* border-radius: 2rem 2rem 0 0; */
   padding: 2rem;
 `
 
@@ -64,8 +64,9 @@ const Container = () => {
 
   return ( 
     <ReduxStoreContext.Provider value={{ state, dispatch }}>
-      <Header />
+      
       <Main>
+          <Header />
           <Solar />
           <PlanetData />
       </Main>

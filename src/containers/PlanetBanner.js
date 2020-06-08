@@ -7,14 +7,14 @@ import { ReduxStoreContext} from '../containers/Container';
 import config_pl from '../config/config_pl';
 import config_en from '../config/config_en';
 
-import mercuryIcon from '../assets/planets/mercury.png';
-import venusIcon from '../assets/planets/venus.png';
-import earthIcon from '../assets/planets/earth.png';
-import marsIcon from '../assets/planets/mars.png';
-import jupiterIcon from '../assets/planets/jupiter.png';
-import saturnIcon from '../assets/planets/saturn.png';
-import uranusIcon from '../assets/planets/uranus.png';
-import neptunIcon from '../assets/planets/neptun.png';
+import mercuryIcon from '../assets/planetIcons/mercury.png';
+import venusIcon from '../assets/planetIcons/venus.png';
+import earthIcon from '../assets/planetIcons/earth.png';
+import marsIcon from '../assets/planetIcons/mars.png';
+import jupiterIcon from '../assets/planetIcons/jupiter.png';
+import saturnIcon from '../assets/planetIcons/saturn.png';
+import uranusIcon from '../assets/planetIcons/uranus.png';
+import neptunIcon from '../assets/planetIcons/neptun.png';
 
 
 const PlanetBannerDiv = styled.div`
