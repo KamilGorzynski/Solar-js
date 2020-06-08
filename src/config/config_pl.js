@@ -29,6 +29,12 @@ const config = {
         'mean_radius': 'Promień',
         'equa_radius': 'Promień równikowy',
         'polar_radius': 'Promień biegunowy',
+        'mass': 'Masa',
+        'vol': 'Objętość',
+        'flattening': 'Spłaszczenie',
+        'sideral_orbit': 'Okres orbitalny',
+        'sideral_rotation': 'Okres obrotu',
+        'discovery_date': 'Data odkrycia',
     }
 }
 

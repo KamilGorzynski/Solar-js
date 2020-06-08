@@ -34,7 +34,7 @@ const PanelContent = styled.div`
 const PlanetChoice = ({ onChange }) => {
 
     const { state } = useContext(ReduxStoreContext);
-    const { planet } = state.langVersion == 'EN' ? config_en : config_pl;
+    const { planet } = state.langVersion === 'EN' ? config_en : config_pl;
 
     return (                      
          <RadioContainer>

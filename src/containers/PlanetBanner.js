@@ -16,6 +16,7 @@ import saturnIcon from '../assets/planets/saturn.png';
 import uranusIcon from '../assets/planets/uranus.png';
 import neptunIcon from '../assets/planets/neptun.png';
 
+
 const PlanetBannerDiv = styled.div`
   width: 100%;
   height: 18rem;
@@ -51,7 +52,7 @@ const Li = styled.li`
 const PlanetBanner = () => {
 
   const { state } = useContext(ReduxStoreContext);
-  const { submenu } = state.langVersion == 'EN' ? config_en : config_pl;
+  const { submenu } = state.langVersion === 'EN' ? config_en : config_pl;
 
   const setPlanetIcon = () => {
     switch (state.currentPlanet) {

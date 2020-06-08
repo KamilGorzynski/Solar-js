@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import {useEffect, useState, useContext} from 'react';
 
 const Container = styled.div`
-   width 100%;
+   width: 100%;
    text-align: left;
    margin: 0 auto 2rem auto;
    font-size: 22px;

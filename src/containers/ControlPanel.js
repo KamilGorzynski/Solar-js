@@ -8,7 +8,7 @@ import config_pl from '../config/config_pl';
 import config_en from '../config/config_en';
 
 const Panel = styled.div`
-  width 100%;
+  width: 100%;
   height: 5rem;
   color: #d3d3d3;
   display: flex;
@@ -16,7 +16,7 @@ const Panel = styled.div`
   margin: 2rem auto;
 `
 const PanelDiv = styled.div`
-  width 48%;
+  width: 48%;
   text-align: center;
   padding-top: 0.5rem;
   // background-image: linear-gradient(to bottom, rgba(35, 35, 35, 0.904), rgba(61, 61, 61, 0.904));
@@ -68,7 +68,7 @@ const Range = styled.input`
 const ControlPanel = ({ changeSpeedFactor, fun }) => {
 
   const { state } = useContext(ReduxStoreContext);
-  const { rotate_speed, background } = state.langVersion == 'EN' ? config_en : config_pl;
+  const { rotate_speed, background } = state.langVersion === 'EN' ? config_en : config_pl;
 
   return (
     <Panel>

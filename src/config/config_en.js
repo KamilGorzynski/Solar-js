@@ -29,6 +29,12 @@ const config = {
         'mean_radius': 'Mean radius',
         'equa_radius': 'Equatorial radius',
         'polar_radius': 'Polar radius',
+        'mass': 'Mass',
+        'vol': 'Volume',
+        'flattening': 'Flattening',
+        'sideral_orbit': 'Orbital period',
+        'sideral_rotation': 'Sideral rotation',
+        'discovery_date': 'Discovery date',
     }
 }
 

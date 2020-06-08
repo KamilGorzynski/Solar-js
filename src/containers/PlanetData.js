@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import {ACTIONS, ReduxStoreContext} from './Container';
-import {useEffect, useState, useContext} from 'react';
 import Table from '../submenu/Table';
 import Description from '../submenu/Description';
 import Sources from '../submenu/Sources';
@@ -14,9 +12,6 @@ const PlanetDataDiv = styled.div`
 `
 
 const PlanetData = () => {
-
-    const { state, dispatch } = useContext(ReduxStoreContext);
-
 
     return (
        <PlanetDataDiv>      
