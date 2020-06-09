@@ -12,18 +12,15 @@ const Main = styled.div`
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.904);
   border: 2px rgba(46, 46, 46, 0.5) solid;
-  /* border-radius: 2rem 2rem 0 0; */
   padding: 2rem;
 `
 
-// stan poczatkowy
 const initialState = {
   currentPlanet: "earth",
   currentPlanetData: {},
   langVersion: "EN",
 };
 
-// definiujemy dostepne typy akcji
 export const ACTIONS = {
   SET_CURRENT_PLANET: 'SET_CURRENT_PLANET',
   SET_CURRENT_PLANET_DATA: 'SET_CURRENT_PLANET_DATA',
