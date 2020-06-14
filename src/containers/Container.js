@@ -56,7 +56,8 @@ const Container = () => {
         type: ACTIONS.SET_CURRENT_PLANET_DATA,
         payload: response 
       });   
-    })   
+    }) 
+    .catch(() => console.log('Service is not available')) ; 
 }, [currentPlanet]);
 
   return ( 

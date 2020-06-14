@@ -22,11 +22,11 @@ const Container = styled.div`
 const Description = () => {
 
     const { state } = useContext(ReduxStoreContext);
-    const { descriptions } = state.langVersion === 'EN' ? config_en : config_pl;
+    const { descriptions, submenu } = state.langVersion === 'EN' ? config_en : config_pl;
 
     return ( 
         <Container>
-            <h1>Description</h1>
+            <h1>{ submenu.description }</h1>
 
             <p>
                 { descriptions[state.currentPlanet].p1 }

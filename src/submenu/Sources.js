@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 import { ReduxStoreContext} from '../containers/Container';
 import sources from '../config/sources';
+import config_pl from '../config/pl/config_pl';
+import config_en from '../config/en/config_en';
 
 const Container = styled.div`
    width: 100%;
@@ -20,10 +22,11 @@ const Container = styled.div`
 const Sources = () => {
 
     const { state } = useContext(ReduxStoreContext);
+    const { submenu } = state.langVersion === 'EN' ? config_en : config_pl;
 
     return (                               
         <Container>
-            <h1>Sources</h1>
+            <h1>{ submenu.sources }</h1>
             <ul>
                 { sources[state.currentPlanet].map(item => <li><h3>{item}</h3></li>) }
             </ul>

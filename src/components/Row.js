@@ -26,7 +26,7 @@ const Row = ({ label, value, exponent, unit }) => {
         <Tr>
             <Td style={ {fontWeight: 'bold'} }>{ label }</Td>
             <Td >
-                {exponent ? (data ? data[value][`${value}Value`] : '-') : (data ? data[value] || '-' : '-')}
+                { exponent ? (data ? data[value][`${value}Value`] : '-') : (data ? data[value] || '-' : '-') }
                 { exponent ? ` x 10`: ''}
                 { exponent && <sup>{ data ? data[value][`${value}Exponent`] : '' }</sup> }
                 { unit ? ` ${unit}` : '' }
