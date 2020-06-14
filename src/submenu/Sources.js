@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import {useEffect, useState, useContext} from 'react';
+import { useContext } from 'react';
+import { ReduxStoreContext} from '../containers/Container';
+import sources from '../config/sources';
 
 const Container = styled.div`
    width: 100%;
@@ -17,15 +19,13 @@ const Container = styled.div`
 
 const Sources = () => {
 
+    const { state } = useContext(ReduxStoreContext);
+
     return (                               
         <Container>
             <h1>Sources</h1>
             <ul>
-                <li><h3>https://en.wikipedia.org/wiki/Solar_System</h3></li>
-                <li><h3>https://en.wikipedia.org/wiki/Solar_System</h3></li>
-                <li><h3>https://en.wikipedia.org/wiki/Solar_System</h3></li>
-                <li><h3>https://en.wikipedia.org/wiki/Solar_System</h3></li>
-                <li><h3>https://en.wikipedia.org/wiki/Solar_System</h3></li>
+                { sources[state.currentPlanet].map(item => <li><h3>{item}</h3></li>) }
             </ul>
         </Container>   
     );

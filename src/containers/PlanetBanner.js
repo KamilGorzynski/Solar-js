@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { ReduxStoreContext} from '../containers/Container';
-import config_pl from '../config/config_pl';
-import config_en from '../config/config_en';
+import config_pl from '../config/pl/config_pl';
+import config_en from '../config/en/config_en';
 
 import mercuryIcon from '../assets/planetIcons/mercury.png';
 import venusIcon from '../assets/planetIcons/venus.png';

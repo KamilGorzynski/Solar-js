@@ -4,8 +4,8 @@ import styled from '@emotion/styled';
 import RadioContainer from './RadioContainer';
 import { useContext} from 'react';
 import {ReduxStoreContext} from './Container';
-import config_pl from '../config/config_pl';
-import config_en from '../config/config_en';
+import config_pl from '../config/pl/config_pl';
+import config_en from '../config/en/config_en';
 
 const Panel = styled.div`
   width: 100%;

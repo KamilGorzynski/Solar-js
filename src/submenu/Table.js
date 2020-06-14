@@ -3,8 +3,8 @@ import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 import { ReduxStoreContext } from '../containers/Container';
 import { useContext } from 'react';
-import config_pl from '../config/config_pl';
-import config_en from '../config/config_en';
+import config_pl from '../config/pl/config_pl';
+import config_en from '../config/en/config_en';
 import Row from '../components/Row';
 
 const Tab = styled.table`
