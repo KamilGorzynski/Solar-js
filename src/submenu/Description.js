@@ -1,7 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
-import {useEffect, useState, useContext} from 'react';
+import { useContext } from 'react';
+import { ReduxStoreContext} from '../containers/Container';
+import config_pl from '../config/pl/config_pl';
+import config_en from '../config/en/config_en';
+
 
 const Container = styled.div`
    width: 100%;
@@ -17,32 +21,23 @@ const Container = styled.div`
 
 const Description = () => {
 
+    const { state } = useContext(ReduxStoreContext);
+    const { descriptions } = state.langVersion === 'EN' ? config_en : config_pl;
+
     return ( 
         <Container>
             <h1>Description</h1>
+
             <p>
-            It is a long established fact that a reader will be distracted
-             by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less
-               normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English.
-                 Many desktop publishing
+                { descriptions[state.currentPlanet].p1 }
             </p>
+
             <p>
-            It is a long established fact that a reader will be distracted
-             by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less
-               normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English.
-                 Many desktop publishing
+                { descriptions[state.currentPlanet].p2 }
             </p>
+
             <p>
-            It is a long established fact that a reader will be distracted
-             by the readable content of a page when looking at its layout.
-              The point of using Lorem Ipsum is that it has a more-or-less
-               normal distribution of letters, as opposed to using 'Content
-                here, content here', making it look like readable English.
-                 Many desktop publishing
+                { descriptions[state.currentPlanet].p3 }
             </p>
         </Container>                              
            

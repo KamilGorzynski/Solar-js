@@ -1,5 +1,7 @@
+import descriptions from './descriptions';
+
 const config = {
-    planet: {
+    'planet': {
         'mercury': 'Mercury',
         'venus': 'Venus',
         'earth': 'Earth',
@@ -35,7 +37,8 @@ const config = {
         'sideral_orbit': 'Orbital period',
         'sideral_rotation': 'Sideral rotation',
         'discovery_date': 'Discovery date',
-    }
+    },
+    'descriptions': descriptions
 }
 
 export default config;

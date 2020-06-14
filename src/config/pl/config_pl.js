@@ -1,3 +1,5 @@
+import descriptions from './descriptions';
+
 const config = {
     'planet': {
         'mercury': 'Merkury',
@@ -35,7 +37,8 @@ const config = {
         'sideral_orbit': 'Okres orbitalny',
         'sideral_rotation': 'Okres obrotu',
         'discovery_date': 'Data odkrycia',
-    }
+    },
+    'descriptions': descriptions
 }
 
 export default config;
